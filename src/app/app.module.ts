@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FeatureRoutingModule } from './app-routing.module';
 
 //Servicios
+import { HeroesService } from './services/heroes.service';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -24,9 +25,11 @@ import { RouterModule, Routes } from '@angular/router';
   imports: [
     BrowserModule,
     FeatureRoutingModule,  
-    RouterModule.forRoot([])  
+    RouterModule.forRoot([]),
   ],
-  providers: [],
+  providers: [
+    HeroesService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,13 @@
-<h1>Heroes de todos colores y sabores</h1>
-<hr>
+<div class="container animated fadeIn fast">
     <div class="card-columns">
-        <div class="card animated fadeIn" *ngFor="let item of heroes; let i = index">          
+        <div class="card animated fadeIn" *ngFor="let item of heroe; let i = index">          
             <img src="{{item.img}}" class="card-img-top" alt="{{item.nombre}}">
             <div class="card-body">
               <h5 class="card-title">{{item.nombre}}</h5>
               <p class="card-text">{{item.bio}}</p>
-              <p class="card-text"><small class="text-muted">Aparición: {{item.aparicion}}</small></p>
-              <button (click)="verHeroe(i)" class="btn-block btn-primary">Ver más</button>
+              <p class="card-text"><small class="text-muted">Aparición: {{item.aparicion}}</small></p>              
               <!--<a class="btn btn-outline-danger" routerLink='/heroe/{{i}}' >Ver más de {{item.nombre}}...</a>-->
             </div>
           </div>
     </div>
+</div>

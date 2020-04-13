@@ -5,12 +5,13 @@ export interface Heroe{
     bio:string;
     img:string;
     aparicion:string;
-    casa:string
+    casa:string,
+    index?:number;
 }
 
 @Injectable()
 export class HeroesService {
-        
+            
     private heroes:Heroe[] =[
         {
           nombre: "Aquaman",
@@ -75,13 +76,15 @@ export class HeroesService {
       return this.heroes[i];
     }
 
-    buscarHeroe(i:string):Heroe[]{
+    buscarHeroe(termino:string):Heroe[]{
       let heroesArray:Heroe[] = [];
-      i = i.toLowerCase();
-      for ( let heroe of this.heroes){
+      termino = termino.toLowerCase();
+      for ( let i = 0;i < this.heroes.length; i++){
+        let heroe = this.heroes[i];
         let nombre = heroe.nombre.toLowerCase();
-        if(nombre.indexOf(i) >= 0){
+        if(nombre.indexOf(termino) >= 0){
           //console.log(nombre.indexOf(i));
+          heroe.index=i;
           heroesArray.push(heroe);
         }
       }

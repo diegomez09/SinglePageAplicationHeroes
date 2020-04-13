@@ -7,15 +7,5 @@
       </div>
     </div>
   </div>
-    <div class="card-columns">
-        <div class="card animated fadeIn" *ngFor="let item of heroe; let i = index">          
-            <img src="{{item.img}}" class="card-img-top" alt="{{item.nombre}}">
-            <div class="card-body">
-              <h5 class="card-title">{{item.nombre}}</h5>
-              <p class="card-text">{{item.bio}}</p>
-              <p class="card-text"><small class="text-muted">Aparición: {{item.aparicion}}</small></p>              
-              <!--<a class="btn btn-outline-danger" routerLink='/heroe/{{i}}' >Ver más de {{item.nombre}}...</a>-->
-            </div>
-          </div>
-    </div>
+  <app-heroe-tarjeta [heroe]="item" [indice]="item.index" *ngFor="let item of heroe; let i = index"></app-heroe-tarjeta> 
 </div>

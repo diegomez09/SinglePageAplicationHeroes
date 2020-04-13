@@ -1,14 +1,5 @@
 <h1>Heroes de todos colores y sabores</h1>
 <hr>
-    <div class="card-columns">
-        <div class="card animated fadeIn" *ngFor="let item of heroes; let i = index">          
-            <img src="{{item.img}}" class="card-img-top" alt="{{item.nombre}}">
-            <div class="card-body">
-              <h5 class="card-title">{{item.nombre}}</h5>
-              <p class="card-text">{{item.bio}}</p>
-              <p class="card-text"><small class="text-muted">Aparición: {{item.aparicion}}</small></p>
-              <button (click)="verHeroe(i)" class="btn-block btn-primary">Ver más</button>
-              <!--<a class="btn btn-outline-danger" routerLink='/heroe/{{i}}' >Ver más de {{item.nombre}}...</a>-->
-            </div>
-          </div>
-    </div>
+<div class="card-columns">
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="foo" [indice]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+</div>    

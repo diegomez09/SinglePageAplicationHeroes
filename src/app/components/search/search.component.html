@@ -1,4 +1,12 @@
+<h1>Buscando: {{termino | uppercase}}</h1>
 <div class="container animated fadeIn fast">
+  <div class="row" *ngIf="heroe.length == 0">
+    <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+        No existen resultados con el termino
+      </div>
+    </div>
+  </div>
     <div class="card-columns">
         <div class="card animated fadeIn" *ngFor="let item of heroe; let i = index">          
             <img src="{{item.img}}" class="card-img-top" alt="{{item.nombre}}">

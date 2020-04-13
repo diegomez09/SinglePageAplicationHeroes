@@ -13,13 +13,14 @@ export class SearchComponent implements OnInit {
 
   heroe:Heroe[] = []
 
+  termino:string = null;
   constructor(private activatedRoute:ActivatedRoute, private _heroeService:HeroesService) { 
     
    }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params =>{
-      //console.log(params['termino']);
+      this.termino = (params['termino']);      
       this.heroe = this._heroeService.buscarHeroe(params['termino']);
       console.log(this.heroe);      
     })
